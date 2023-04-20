@@ -1,0 +1,53 @@
+Delivered-To: saiabhishek2309@gmail.com
+Received: by 2002:a05:6358:c82:b0:110:8202:3cc with SMTP id o2csp926219rwj;
+        Sat, 15 Apr 2023 08:40:01 -0700 (PDT)
+X-Google-Smtp-Source: AKy350aAMY4KJ1tew26IS2PSb4NNZQO/ad1bS2reVGMiXk4l1hRFrYOVmcpOLfCzPN5iPn29UYRF
+X-Received: by 2002:a05:622a:11ca:b0:3d8:fd72:b4b5 with SMTP id n10-20020a05622a11ca00b003d8fd72b4b5mr16020020qtk.31.1681573200953;
+        Sat, 15 Apr 2023 08:40:00 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1681573200; cv=none;
+        d=google.com; s=arc-20160816;
+        b=B82TjrZockkzFfdo8EbmPVCPzgJIYNBlXxzz9eimsfcmPNdRt2tTbfFHt9j80i5K2Y
+         bh3poJPhvktM593l9WM4kMo26g+b94MMV3IZ5qU43Gkm20ABF870+r5+O66eWYwLZzny
+         n9R/atQUWauq9WeSpizZocg6PN92Eo2rU0EsDnY0XNr00gsGuyEWTIFlfd/vT7s+D7gB
+         yb5jZUdx4xtJzG9NroTCl77Bh9B8AXuJk6dgVjDGxzEIrgaDmbH/mYjgtQmtAw/nCB17
+         0ewn2tK7Mhyfg41i5Kg7r5Ri4H3lb9fr+YuM0G0fUnm363kV6lijJ2ol5ylvm1xUi4Dj
+         cr+g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=feedback-id:date:message-id:content-transfer-encoding:mime-version
+         :subject:to:from:dkim-signature:dkim-signature;
+        bh=LTPm+9hZXi0kvGzISpRF6zsklCY8BfcnK8BG4kWI+QQ=;
+        b=c9/K5DWo7/N/Yh6PZDEOyNxwVjZ4TheKXINeQgJCgN3rcgzQqkY5rGY/2Xe097QOY+
+         HMl7wvL0becjn/PI9esXfucj+KZEmVGSz7vKoWR8sVutSFMs2ufsg0Dx1BNwSGFjaR76
+         Cgaf996cTwIYARRm5QsgAeRFTPAbPfBOp8Zl6ff11evO+MNztchUP4iD7ETlWbolnOKD
+         DK9dGEAlNA+wbjidHlvHYFVG9HEbgHPJS7C5t8JUg/Utla6bcvsp4Zgfb6phN70YLVtC
+         FZyNHiH7/7kZU3AP3DWsZBQ5ayFVUdHW5g9SD2bPMRZuN6XRSMoVktSPeRgddlvnT8K1
+         4dhg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@redditmail.com header.s=xilmjaesmk3m6dhldmzc75r7654i2ch4 header.b=cv+n3Q7M;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b="EiX/gWXB";
+       spf=pass (google.com: domain of 010001878592c19f-b6a31843-4559-437e-a8e7-736e78544389-000000@amazonses.com designates 54.240.72.77 as permitted sender) smtp.mailfrom=010001878592c19f-b6a31843-4559-437e-a8e7-736e78544389-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=redditmail.com
+Return-Path: <010001878592c19f-b6a31843-4559-437e-a8e7-736e78544389-000000@amazonses.com>
+Received: from a72-77.smtp-out.amazonses.com (a72-77.smtp-out.amazonses.com. [54.240.72.77])
+        by mx.google.com with ESMTPS id a17-20020a05620a067100b0074aaa628539si3688212qkh.482.2023.04.15.08.40.00
+        for <saiabhishek2309@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Sat, 15 Apr 2023 08:40:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of 010001878592c19f-b6a31843-4559-437e-a8e7-736e78544389-000000@amazonses.com designates 54.240.72.77 as permitted sender) client-ip=54.240.72.77;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@redditmail.com header.s=xilmjaesmk3m6dhldmzc75r7654i2ch4 header.b=cv+n3Q7M;
+       dkim=pass header.i=@amazonses.com header.s=224i4yxa5dv7c2xz3womw6peuasteono header.b="EiX/gWXB";
+       spf=pass (google.com: domain of 010001878592c19f-b6a31843-4559-437e-a8e7-736e78544389-000000@amazonses.com designates 54.240.72.77 as permitted sender) smtp.mailfrom=010001878592c19f-b6a31843-4559-437e-a8e7-736e78544389-000000@amazonses.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=redditmail.com
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=xilmjaesmk3m6dhldmzc75r7654i2ch4; d=redditmail.com; t=1681573200; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date; bh=DJ12dFuyhdqgt6rU0dw97LjVhQPX0ZSW77o5D7lWjHg=; b=cv+n3Q7MK2cS2K8hSHUJUdxTcD9kahpfMfwCFj+M009S+LVnltUAvROY18rACdh+ IWfS7bUC+NIqtEM8cQxNr8L0ySltuxBxAE1PFrioakcE3i0aNT6WkMZVTQJsoP8lWYz R7zP8sVpEGlswGva53KE7MbPkhYNBcBZzCb0e8tA=
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/simple; s=224i4yxa5dv7c2xz3womw6peuasteono; d=amazonses.com; t=1681573200; h=From:To:Subject:MIME-Version:Content-Type:Content-Transfer-Encoding:Message-ID:Date:Feedback-ID; bh=DJ12dFuyhdqgt6rU0dw97LjVhQPX0ZSW77o5D7lWjHg=; b=EiX/gWXBw2a6t+a/q+CZRDZ8mMawHz3s9Oca9uEcZ8WrgfeKjBk7eXcIFVekCr8d U7yaWHvrGXE9mJbSMP7uaHrlCOx6PONXJHPiYcYgmMKUSvjvI7nDgv6kVj0SZm9CNDn 4VcjYutuyQaIPl8EDHLor8jXwwBJVNCPHSIjzdQs=
+From: Reddit <noreply@redditmail.com>
+To: saiabhishek2309@gmail.com
+Subject: "iPhone 13 Mini"
+MIME-Version: 1.0
+Content-Type: text/html; charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+Message-ID: <010001878592c19f-b6a31843-4559-437e-a8e7-736e78544389-000000@email.amazonses.com>
+Date: Sat, 15 Apr 2023 15:40:00 +0000
+Feedback-ID: 1.us-east-1.UqlFplRllIQtiw+Kq2b87y7uRSu9p66fMici2AQNsMU=:AmazonSES
+X-SES-Outgoing: 2023.04.15-54.240.72.77
